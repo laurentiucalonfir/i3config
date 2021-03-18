@@ -33,6 +33,11 @@ usermod -aG libvirt laurentiu
 
 echo " ALL=(ALL) ALL" >> /etc/sudoers.d/laurentiu
 
+git clone https://aur.archlinux.org/yay.git
+cd yay/
+makepkg -si --noconfirm
+
+
 
 /bin/echo -e "\e[1;32mDone! Type exit, umount -a and reboot.\e[0m"
 
