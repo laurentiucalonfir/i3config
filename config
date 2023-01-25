@@ -190,7 +190,7 @@ bar {
 }
 
 #Display config
-exec_always --no-startup-id xrandr -s 1360x768
+exec_always --no-startup-id xrandr -s 1920x1080
 #assign app
 bindsym $mod+i exec --no-startup-id firefox
 
@@ -227,3 +227,11 @@ exec_always --no-startup-id volnoti
  bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
 #numlockx
 exec_always --no-startup-id numlockx
+#Floating_apps
+for_window [title="Terminator Preferences"] floating enable
+for_window [title="Customize Look and Feel"] floating enable
+#update
+bindsym $mod+U exec --no-startup-id sh ~/update.sh
+#set inner/outer gaps
+gaps inner 10
+gaps outer 5
